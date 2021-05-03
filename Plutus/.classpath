@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/classmate-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/hibernate-validator-6.1.7.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jackson-annotations-2.11.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jackson-core-2.11.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jackson-databind-2.11.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jakarta.annotation-api-1.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jakarta.el-3.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jakarta.validation-api-2.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jboss-logging-3.4.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/jul-to-slf4j-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/kafka-clients-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/log4j-api-2.13.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/log4j-to-slf4j-2.13.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/lz4-java-1.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/p2p-bank-3.0.0-v1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/reactive-streams-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/reactor-core-3.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/snakeyaml-1.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/snappy-java-1.1.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-aop-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-beans-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-boot-2.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-boot-autoconfigure-2.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-boot-jarmode-layertools-2.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-cloud-function-context-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-cloud-function-core-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-cloud-stream-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-cloud-stream-binder-kafka-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-cloud-stream-binder-kafka-core-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-context-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-core-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-expression-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-integration-core-5.4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-integration-jmx-5.4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-integration-kafka-5.4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-jcl-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-kafka-2.6.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-messaging-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-retry-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-tx-5.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/typetools-0.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/zstd-jni-1.4.4-7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

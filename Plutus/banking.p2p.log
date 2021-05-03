@@ -1,0 +1,463 @@
+2021-05-03 20:35:12.791  INFO 1948 --- [main] chat.ChatApplication                     : Starting ChatApplication using Java 14.0.2 on Astar-PC with PID 1948 (C:\Users\User\Desktop\לימודים\אביב 2021\שיטות בהנדסת תוכנה\תרגילי בית\פרייקט קורס\Bank\Plutus\bin started by User in C:\Users\User\Desktop\לימודים\אביב 2021\שיטות בהנדסת תוכנה\תרגילי בית\פרייקט קורס\Bank\Plutus)
+2021-05-03 20:35:12.803  INFO 1948 --- [main] chat.ChatApplication                     : No active profile set, falling back to default profiles: default
+2021-05-03 20:35:15.410  INFO 1948 --- [main] o.s.c.a.ConfigurationClassEnhancer       : @Bean method FunctionConfiguration.po is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2021-05-03 20:35:15.490  INFO 1948 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2021-05-03 20:35:15.502  INFO 1948 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2021-05-03 20:35:15.514  INFO 1948 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2021-05-03 20:35:15.789  INFO 1948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 20:35:15.899  INFO 1948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 20:35:15.902  INFO 1948 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 20:35:18.786  INFO 1948 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-05-03 20:35:20.197  INFO 1948 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'bankinginterchange.handleMessage-in-0' has 1 subscriber(s).
+2021-05-03 20:35:20.966  INFO 1948 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2021-05-03 20:35:20.969  INFO 1948 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'bankinginterchange.errorChannel' has 1 subscriber(s).
+2021-05-03 20:35:20.972  INFO 1948 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2021-05-03 20:35:20.975  INFO 1948 --- [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kafka
+2021-05-03 20:35:22.170  INFO 1948 --- [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kafka
+2021-05-03 20:35:22.172  INFO 1948 --- [main] o.s.c.s.binder.DefaultBinderFactory      : Retrieving cached binder: kafka
+2021-05-03 20:35:22.846  INFO 1948 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [127.0.0.1:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-05-03 20:35:23.674  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:23.679  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:23.680  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063323662
+2021-05-03 20:35:25.695  INFO 1948 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 100
+	auto.offset.reset = latest
+	bootstrap.servers = [127.0.0.1:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-05-03 20:35:25.846  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:25.847  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:25.847  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063325846
+2021-05-03 20:35:25.869  INFO 1948 --- [main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-1, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Cluster ID: UcG45T4lT3iT4uI_sMWzaQ
+2021-05-03 20:35:25.978  INFO 1948 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'bankingQ.anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a.errors' has 1 subscriber(s).
+2021-05-03 20:35:25.996  INFO 1948 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'bankingQ.anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a.errors' has 0 subscriber(s).
+2021-05-03 20:35:25.997  INFO 1948 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'bankingQ.anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a.errors' has 1 subscriber(s).
+2021-05-03 20:35:25.998  INFO 1948 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'bankingQ.anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a.errors' has 2 subscriber(s).
+2021-05-03 20:35:26.043  INFO 1948 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 100
+	auto.offset.reset = latest
+	bootstrap.servers = [127.0.0.1:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-05-03 20:35:26.131  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:26.132  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:26.132  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063326131
+2021-05-03 20:35:26.139  INFO 1948 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Subscribed to topic(s): bankingQ
+2021-05-03 20:35:26.143  INFO 1948 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2021-05-03 20:35:26.156  INFO 1948 --- [main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@19b07407
+2021-05-03 20:35:26.310  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Cluster ID: UcG45T4lT3iT4uI_sMWzaQ
+2021-05-03 20:35:26.473  INFO 1948 --- [main] chat.ChatApplication                     : Started ChatApplication in 15.823 seconds (JVM running for 28.386)
+2021-05-03 20:35:26.477 DEBUG 1948 --- [main] p2p.banking.BankingInterchange           : initialized bank partner: as
+2021-05-03 20:35:30.848  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Discovered group coordinator Astar-PC:9092 (id: 2147483647 rack: null)
+2021-05-03 20:35:30.853  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] (Re-)joining group
+2021-05-03 20:35:31.114  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group.
+2021-05-03 20:35:31.114  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] (Re-)joining group
+2021-05-03 20:35:31.282  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Finished assignment for group at generation 1: {consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2-32ff1768-fe71-4383-9f08-76298a2f706d=Assignment(partitions=[bankingQ-0])}
+2021-05-03 20:35:31.821  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Successfully joined group with generation 1
+2021-05-03 20:35:31.912  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Notifying assignor about the new Assignment(partitions=[bankingQ-0])
+2021-05-03 20:35:31.922  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Adding newly assigned partitions: bankingQ-0
+2021-05-03 20:35:31.947  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Found no committed offset for partition bankingQ-0
+2021-05-03 20:35:31.960  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Found no committed offset for partition bankingQ-0
+2021-05-03 20:35:32.033  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Resetting offset for partition bankingQ-0 to offset 0.
+2021-05-03 20:35:32.364  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a: partitions assigned: [bankingQ-0]
+2021-05-03 20:35:51.782 DEBUG 1948 --- [main] p2p.core.MessageHandler                  : sending: {"sender":"as","contnet":"hi","timestamp":1620063351675}
+2021-05-03 20:35:51.804  INFO 1948 --- [main] o.s.c.s.binder.DefaultBinderFactory      : Retrieving cached binder: kafka
+2021-05-03 20:35:51.840  INFO 1948 --- [main] o.s.c.s.b.k.p.KafkaTopicProvisioner      : Using kafka topic for outbound: bankingQ
+2021-05-03 20:35:51.847  INFO 1948 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	bootstrap.servers = [127.0.0.1:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-05-03 20:35:51.867  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:51.868  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:51.869  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063351867
+2021-05-03 20:35:52.065  INFO 1948 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [127.0.0.1:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-05-03 20:35:52.198  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:52.199  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:52.199  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063352198
+2021-05-03 20:35:52.225  INFO 1948 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: UcG45T4lT3iT4uI_sMWzaQ
+2021-05-03 20:35:52.230  INFO 1948 --- [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2021-05-03 20:35:52.256  INFO 1948 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'unknown.channel.name' has 1 subscriber(s).
+2021-05-03 20:35:52.363  INFO 1948 --- [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [127.0.0.1:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-2
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = true
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-05-03 20:35:52.391  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.6.0
+2021-05-03 20:35:52.392  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 62abe01bee039651
+2021-05-03 20:35:52.393  INFO 1948 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1620063352390
+2021-05-03 20:35:52.431  INFO 1948 --- [kafka-producer-network-thread | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Cluster ID: UcG45T4lT3iT4uI_sMWzaQ
+2021-05-03 20:35:52.721 DEBUG 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] p2p.core.MessageHandler                  : received: {"sender":"as","contnet":"hi","timestamp":1620063351675}
+2021-05-03 20:35:56.672  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Revoke previously assigned partitions bankingQ-0
+2021-05-03 20:35:56.677  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a: partitions revoked: [bankingQ-0]
+2021-05-03 20:35:56.678  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Member consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2-32ff1768-fe71-4383-9f08-76298a2f706d sending LeaveGroup request to coordinator Astar-PC:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-05-03 20:35:56.680  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a-2, groupId=anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a] Unsubscribed all topics or patterns and assigned partitions
+2021-05-03 20:35:56.680  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2021-05-03 20:35:56.733  INFO 1948 --- [KafkaConsumerDestination{consumerDestinationName='bankingQ', partitions=1, dlqName='null'}.container-0-C-1] essageListenerContainer$ListenerConsumer : anonymous.55b882a3-7bc6-431f-b4ba-50e79881c76a: Consumer stopped
+2021-05-03 20:35:56.744  INFO 1948 --- [main] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@19b07407
+2021-05-03 20:35:56.745  INFO 1948 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2021-05-03 20:35:56.746  INFO 1948 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'bankinginterchange.errorChannel' has 0 subscriber(s).
+2021-05-03 20:35:56.747  INFO 1948 --- [main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2021-05-03 20:35:56.752  INFO 1948 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
