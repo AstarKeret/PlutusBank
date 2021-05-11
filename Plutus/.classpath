@@ -51,5 +51,6 @@
 	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/spring-tx-5.3.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/typetools-0.6.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/הורדות/P2P/zstd-jni-1.4.4-7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Desktop/לימודים/אביב 2021/שיטות בהנדסת תוכנה/תרגילי בית/פרייקט קורס/mssql-jdbc-8.4.1.jre8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,13 +1,25 @@
-package chat;
+package transaction;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class BankingTransactionBoundary {
 	private AccountBoundary source;
 	private AccountBoundary destination;
 	private String comment;
-	private LocalDate timeStamp;
+	private Date timestamp;
 	private double amount;
+	
+	public BankingTransactionBoundary() {
+		
+	}
+	
+	public BankingTransactionBoundary(AccountBoundary source, AccountBoundary destination, String comment, double amount) {
+		this.source = source;
+		this.destination = destination;
+		this.comment = comment;
+		this.timestamp = new Date();
+		this.amount = amount;
+	}
 	
 	public AccountBoundary getSource() {
 		return source;
@@ -27,11 +39,11 @@ public class BankingTransactionBoundary {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public LocalDate getDateStamp() {
-		return timeStamp;
+	public Date getDateStamp() {
+		return timestamp;
 	}
-	public void setDateStamp(LocalDate timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setDateStamp(Date timeStamp) {
+		this.timestamp = timeStamp;
 	}
 	public double getAmount() {
 		return amount;

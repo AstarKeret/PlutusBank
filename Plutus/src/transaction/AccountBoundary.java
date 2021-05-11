@@ -1,17 +1,26 @@
-package chat;
+package transaction;
 
 public class AccountBoundary {
-	private BankingTransactionBoundary theTransaction;
+//	private BankingTransactionBoundary theTransaction;
 	private String accountNumber;
 	private String bankID;
 	private String branch;
 	private String customerName;
 	
-	public BankingTransactionBoundary getTheTransaction() {
-		return theTransaction;
+//	public BankingTransactionBoundary getTheTransaction() {
+//		return theTransaction;
+//	}
+//	public void setTheTransaction(BankingTransactionBoundary theTransaction) {
+//		this.theTransaction = theTransaction;
+//	}
+	public AccountBoundary() {
 	}
-	public void setTheTransaction(BankingTransactionBoundary theTransaction) {
-		this.theTransaction = theTransaction;
+
+	public AccountBoundary(String accountNumber, String bankID, String branch, String customerName) {
+		this.accountNumber = accountNumber;
+		this.bankID = bankID;
+		this.bankID = branch;
+		this.customerName = customerName;
 	}
 	
 	public String getAccountNumber() {
