@@ -1,18 +1,11 @@
 package transaction;
 
 public class AccountBoundary {
-//	private BankingTransactionBoundary theTransaction;
 	private String accountNumber;
 	private String bankID;
 	private String branch;
 	private String customerName;
 	
-//	public BankingTransactionBoundary getTheTransaction() {
-//		return theTransaction;
-//	}
-//	public void setTheTransaction(BankingTransactionBoundary theTransaction) {
-//		this.theTransaction = theTransaction;
-//	}
 	public AccountBoundary() {
 	}
 

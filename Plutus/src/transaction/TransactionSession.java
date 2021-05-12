@@ -3,17 +3,19 @@ package transaction;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import model.ManagmentSystem;
+import model.TransactionCtrl;
 import p2p.banking.BankingInterchange;
 
 public class TransactionSession implements AutoCloseable{
 	private String myID;
-//	private SimpleDateFormat formatter;
+	private TransactionCtrl ctrl;
 	private BankingInterchange<BankingTransactionBoundary> interchange;
 
 	public TransactionSession(String bankID, String... config) {
 		super();
+		ctrl = new TransactionCtrl(); 
 		this.myID = bankID;
-//		this.formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		this.interchange = new BankingInterchange<BankingTransactionBoundary>(this.myID, config, this::handleMessage, new BankingTransactionBoundary());
 	}
 
@@ -25,14 +27,10 @@ public class TransactionSession implements AutoCloseable{
 	public void close() throws Exception {
 		this.interchange.close();		
 	}
-	
-	//if its ours transaction or not
-	public void handleMessage (BankingTransactionBoundary trans) {
-		if (trans.getDestination().getBankID().equals(this.myID)) {
-			//add receiving money
-		}else {
 
-		}
+	public void handleMessage (BankingTransactionBoundary trans) {
+		if (trans.getDestination().getBankID().equals(this.myID)) 
+			ctrl.receivingMoney(trans);
 	}
 
 }

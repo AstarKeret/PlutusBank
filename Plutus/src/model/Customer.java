@@ -20,13 +20,13 @@ public class Customer extends Person{
 		this.phoneNumber = phoneNumber;
 		allAccounts = new ArrayList<>();
 	}
-	
+
 	public ArrayList<Account> getAllAccounts() {
 		return allAccounts;
 	}
 
-	public void setAllAccounts(ArrayList<Account> allAccounts) {
-		this.allAccounts = allAccounts;
+	public void addAllAccount(Account account) {
+		allAccounts.add(account);
 	}
 
 	public int getCustomerNumber() {

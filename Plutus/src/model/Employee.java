@@ -1,10 +1,10 @@
 package model;
 
-public class Emplyee extends Person{
+public class Employee extends Person{
 	public enum Type {Manager, Banker};
 	private Type type;
 	
-	public Emplyee(String firstName, String surName, String userName, String password, Type type) {
+	public Employee(String firstName, String surName, String userName, String password, Type type) {
 		super(firstName, surName, userName, password);
 		this.type = type;
 	}
