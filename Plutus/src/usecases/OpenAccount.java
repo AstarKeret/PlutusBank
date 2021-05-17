@@ -6,4 +6,5 @@ public class OpenAccount {
 	public static Account openNewRequest() {
 		return new Account();
 	}
+	
 }

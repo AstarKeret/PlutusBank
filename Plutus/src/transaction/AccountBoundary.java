@@ -12,7 +12,7 @@ public class AccountBoundary {
 	public AccountBoundary(String accountNumber, String bankID, String branch, String customerName) {
 		this.accountNumber = accountNumber;
 		this.bankID = bankID;
-		this.bankID = branch;
+		this.branch = branch;
 		this.customerName = customerName;
 	}
 	

@@ -18,8 +18,7 @@ public class CreateNewCustomer extends Customer {
 
 		for (Employee employee : employees) {
 			if (employee.getType() == Employee.Type.Manager)
-				;
-			return true;
+				return true;
 		}
 
 		return false;
@@ -29,7 +28,7 @@ public class CreateNewCustomer extends Customer {
 	public boolean registerCustomer() {
 		if (searchManager()) {
 			ManagmentSystem.getManager().addAllCustomer(this);
-
+			return true;
 		}
 
 		return false;
