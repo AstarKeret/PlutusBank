@@ -5,23 +5,23 @@ import java.util.Date;
 import transaction.AccountBoundary;
 
 public class Transaction {
-	private AccountBoundary source;
+	private AccountBoundary otherPerson;
 	private String comment;
 	private Date timestamp;
 	private double amount;
 	
-	public Transaction(AccountBoundary source, String comment, Date timestamp, double amount) {
-		this.source = source;
+	public Transaction(AccountBoundary otherPerson, String comment, Date timestamp, double amount) {
+		this.otherPerson = otherPerson;
 		this.comment = comment;
 		this.timestamp = timestamp;
 		this.amount = amount;
 	}
 	
-	public AccountBoundary getSource() {
-		return source;
+	public AccountBoundary getOtherPerson() {
+		return otherPerson;
 	}
-	public void setSource(AccountBoundary source) {
-		this.source = source;
+	public void setOtherPerson(AccountBoundary otherPerson) {
+		this.otherPerson = otherPerson;
 	}
 	public String getComment() {
 		return comment;
@@ -42,3 +42,4 @@ public class Transaction {
 		this.amount = amount;
 	}
 }
+
