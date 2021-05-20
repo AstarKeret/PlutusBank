@@ -2,9 +2,9 @@ package transaction;
 
 import java.util.Scanner;
 
+import main.Main;
 import model.Account;
 import model.Customer;
-import model.Main;
 
 public class TransferMoney {
 	public static Scanner scanner = new Scanner(System.in);
@@ -12,59 +12,49 @@ public class TransferMoney {
 
 	public static void transfer(String[] args) {
 		AccountBoundary destination = getDestinationDetails();
-		double amount = 0;
-		while(amount > 0){
+		double amount = -1;
+		while(true){
 			try {
 			System.out.println("Amount to be transferred:");
-		amount = scanner.nextDouble();
+			amount = scanner.nextDouble();
+			if(amount <= 0)
+				System.out.println("The amount to be transferred must be greater than 0");
+			else
+				break;
 		}catch (Exception e) {
-			System.out.println("a");
+			System.out.println("The amount must be written in the digits");
+			scanner.next();
 		}
 			}
 		System.out.println("Enter a commant:");
-		String commant = scanner.nextLine().trim();
-		scanner.next();
+//		scanner.nextLine();
+		String commant = scanner.next().trim();
 		new TransactionCtrl(args).sendMoney(destination, amount, commant);
 	}
 	
 
 	
 	private static AccountBoundary getDestinationDetails() {
-		System.out.println("Enter account number");
-		String accountNumber = scanner.nextLine().trim();
-		System.out.println("Enter bank ID");
-		String bankID = scanner.nextLine().trim();
-		System.out.println("Enter branch number");
-		String branch = scanner.nextLine().trim();
-		System.out.println("Enter reciver name");
-		String name = scanner.nextLine().trim();
+		String accountNumber, bankID, branch, name;
+		while(true){
+			System.out.println("Enter account number");
+			accountNumber = scanner.nextLine().trim();
+			System.out.println("Enter bank ID");
+			bankID = scanner.nextLine().trim();
+			System.out.println("Enter branch number");
+			branch = scanner.nextLine().trim();
+			System.out.println("Enter reciver name");
+			name = scanner.nextLine().trim();
+			if(accountNumber.isBlank()) {
+				System.out.println("You must enter an account number");
+				continue;
+			}
+			if(bankID.isBlank())
+				System.out.println("You must enter a bank ID");
+			else
+				break;
+		}
 		return new AccountBoundary(accountNumber, bankID, branch, name);
+		
 	}
 }
-//public static Boolean sendMoney(BankingTransactionBoundary trans) {
-//try (TransactionSession ts = new TransactionSession(MY_ID, args)){
-//
-//	ts.sendMoney(trans);
-//	System.err.println("type any key to quit");
-//}catch (Exception e) {
-//	System.err.println("type any key to quit");
-//}
-//return false;
-//}
-
-//Customer tmp = Main.getCustomer();
-//AccountBoundary source = new AccountBoundary(Main.getAccount().getAccountNumber(), MY_ID, " ", tmp.getFirstName() + " " + tmp.getSurName());
-//AccountBoundary destination = getDestinationDetails();
-//
-//System.err.println("Amount to be transferred:");
-//double amount = scanner.nextDouble();
-//System.err.println("Enter a commant:");
-//String commant = scanner.nextLine().trim();
-//BankingTransactionBoundary trans= new BankingTransactionBoundary(source, destination, commant, amount);
-//try (TransactionSession ts = new TransactionSession(MY_ID, args)){
-//
-//	ts.sendMoney(trans);
-//	System.err.println("type any key to quit");
-//}catch (Exception e) {
-//	System.err.println("type any key to quit");
-//}

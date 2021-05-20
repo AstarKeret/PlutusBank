@@ -1,9 +1,10 @@
 package usecases;
 
 import java.util.ArrayList;
+
+import main.ManagmentSystem;
 import model.Customer;
 import model.Employee;
-import model.ManagmentSystem;
 
 public class CreateNewCustomer extends Customer {
 	public CreateNewCustomer(String firstName, String surName, String userName, String password, Gender type,

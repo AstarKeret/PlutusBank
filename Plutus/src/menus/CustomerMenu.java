@@ -1,11 +1,12 @@
 package menus;
-
 import java.util.Scanner;
 
 import model.Account;
 import model.Customer;
 
 public class CustomerMenu {
+
+
 	static Account accountLogin;
 	public static void run(Customer customer)// After Login
 	{
@@ -20,7 +21,7 @@ public class CustomerMenu {
 		System.out.println("2. Show my accounts \n");// 2
 		System.out.println("3. Open new account\n");// 3
 		System.out.println("4. Select an account\\n");// 4
-		System.out.println("5. Logout\n");// 3
+		System.out.println("5. Logout\n");// 5
 		try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 		System.err.print("#  ");
 		
@@ -55,5 +56,11 @@ public class CustomerMenu {
 		}
 		}while(flag==false);
 		data.close();
+	}
+	public static Account getAccountLogin() {
+		return accountLogin;
+	}
+	public static void setAccountLogin(Account accountLogin) {
+		CustomerMenu.accountLogin = accountLogin;
 	}
 }

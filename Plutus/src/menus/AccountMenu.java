@@ -1,5 +1,4 @@
 package menus;
-
 import java.util.Scanner;
 
 import model.Account;

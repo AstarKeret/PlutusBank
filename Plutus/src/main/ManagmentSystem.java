@@ -1,11 +1,9 @@
 package main;
+
 import java.util.ArrayList;
 
 import model.Customer;
 import model.Employee;
-
-import java.util.ArrayList;
-
 import transaction.BankingTransactionBoundary;
 
 public class ManagmentSystem {
@@ -40,9 +38,9 @@ public class ManagmentSystem {
 	
 	public Customer findCustomer(String userName,String pass) {
 		Customer customer=null;
-		while(allEmployees.iterator().hasNext())
+		while(allCustomer.iterator().hasNext())
 		{
-			if(allEmployees.iterator().next().getUserName()==userName && allEmployees.iterator().next().getUserName()==pass)
+			if(allCustomer.iterator().next().getUserName().equals(userName.trim()) && allCustomer.iterator().next().getUserName().equals(pass.trim()))
 			{
 				customer=allCustomer.iterator().next();
 			}
