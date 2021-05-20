@@ -16,12 +16,11 @@ public class ShowAccount {
 		try {
 			System.out.println("Total balance- " + account.getBalance());
 			System.out.println("Opened on- " + account.getOpenDate().toString());
-			System.out.println("All account transactions: ");
+			if(account.getTransactions().size() > 0) 
+				System.out.println("All account transactions: ");
 			 for (int i = 0; i < account.getTransactions().size(); i++) {
 				 Transaction getTransaction= account.getTransactions().get(i);
-				showTransaction(getTransaction, account);
-			
-
+				 showTransaction(getTransaction, account);
 			 }
 		} catch (Exception e) {
 			System.err.println("There is no such account");

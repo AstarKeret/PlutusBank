@@ -44,19 +44,28 @@ public class CustomerMenu {
 					System.out.println("Open Account Succeeded");
 					break;
 				case (4):
-					for(int i = 0 ; i < customer.getAllAccounts().size() ; i++)
-						System.out.println((i+1)+".\t"+customer.getAllAccounts().get(i).getAccountNumber());
-					
-					System.out.println("Please enter your selection\n");// 4
-					select = data.nextInt();
-					try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
-						System.err.print("#  ");
-						accountLogin = customer.getAllAccounts().get(select);
-						AccountMenu.run(accountLogin, args);			break;
-					case (5):
+					if(customer.getAllAccounts().size() > 0) {
+						for(int i = 0 ; i < customer.getAllAccounts().size() ; i++)
+							System.out.println((i+1)+".\tAccount #"+customer.getAllAccounts().get(i).getAccountNumber());
+		
+						System.out.println("Please enter your selection\n");// 4
+						select = data.nextInt();
+						try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
+							System.err.print("#  ");
+							accountLogin = customer.getAllAccounts().get(select-1);
+							if(accountLogin == null)
+								System.out.println("true");
+							System.out.println(accountLogin.getAccountNumber());
+							AccountMenu.run(accountLogin, args);		
+						}
+					else
+						System.out.println("You do not have a bank account");	
+					break;
+						case (5):
 					
 					flag = true;
 					break;
+			
 				}
 		}while(!flag);
 		data.close();

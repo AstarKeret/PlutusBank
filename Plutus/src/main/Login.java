@@ -23,9 +23,9 @@ public class Login {
 	static Customer customerLogin= null;
 	static Employee EmployeeLogin= null;
 	public static Boolean start(int select, String[] args)//  Infinity=true => back to main menu
-	{	//	ManagmentSystem.getManager().getAllCustomer().add(new Customer("Or", "Choen", "OrChoen", "12345", Gender.Male, "01/01/1995", "058544555"));
+	{		ManagmentSystem.getManager().getAllCustomer().add(new Customer("Or", "Choen", "OrChoen", "12345", Gender.Male, "01/01/1995", "058544555"));
 	
-		//	ManagmentSystem.getManager().getAllCustomer().get(0).addAllAccount(new Account(100));
+			ManagmentSystem.getManager().getAllCustomer().get(0).addAllAccount(new Account(100));
 
 		
 		try {

@@ -11,7 +11,6 @@ public class AccountMenu {
 	{
 		boolean flag=false;	
 		Scanner data = new Scanner(System.in);  // Create a Scanner object
-
 		do {
 		System.err.println("Welcome to Account " + accountLogin.getAccountNumber());
 		System.out.println("Select one of the displayed options and enter its number after the #\n");

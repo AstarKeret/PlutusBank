@@ -37,7 +37,7 @@ public class TransferMoney {
 	private static AccountBoundary getDestinationDetails() {
 		String accountNumber, bankID, branch, name;
 		while(true){
-			System.out.println("Enter account number");
+			System.out.println("\t**Destination Details**\n\nEnter account number");
 			accountNumber = scanner.nextLine().trim();
 			System.out.println("Enter bank ID");
 			bankID = scanner.nextLine().trim();
