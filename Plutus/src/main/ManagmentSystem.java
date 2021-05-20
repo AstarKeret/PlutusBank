@@ -38,24 +38,19 @@ public class ManagmentSystem {
 	
 	public Customer findCustomer(String userName,String pass) {
 		Customer customer=null;
-		while(allCustomer.iterator().hasNext())
-		{
-			if(allCustomer.iterator().next().getUserName().equals(userName.trim()) && allCustomer.iterator().next().getUserName().equals(pass.trim()))
-			{
-				customer=allCustomer.iterator().next();
-			}
-		}
+		for(int i = 0; i < allCustomer.size() ; i++)
+			if(allCustomer.get(i).getUserName().trim().equals(userName.trim()) && allCustomer.get(i).getPassword().trim().equals(pass.trim()))
+				return allCustomer.get(i);
+			
+		
 		return customer;
 	}
 	public Employee findEmployee(String userName,String pass) {
 		Employee employee=null;
-		while(allEmployees.iterator().hasNext())
-		{
-			if(allEmployees.iterator().next().getUserName()==userName && allEmployees.iterator().next().getUserName()==pass)
-			{
-				employee=allEmployees.iterator().next();
-			}
-		}
+		for(int i = 0; i < allCustomer.size() ; i++)
+			if(allEmployees.get(i).getUserName().trim().equals(userName.trim()) && allEmployees.get(i).getPassword().trim().equals(pass.trim()))
+				return allEmployees.get(i);
+		
 		return employee;
 		}
 

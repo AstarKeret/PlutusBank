@@ -7,6 +7,7 @@ public class Main {
 	static ManagmentSystem ManagmentSystem;
 	public static void main(String[] args)   {
 		boolean Infinity=true;	
+		
 		Scanner data = new Scanner(System.in);  // Create a Scanner object
 			do {	
 		try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
@@ -20,7 +21,7 @@ public class Main {
 		System.err.print("#  ");
 		
 		int select = data.nextInt();  // select
-        Infinity=Login.start(select);
+        Infinity=Login.start(select, args);
 		
 			}while (Infinity==true);
 		data.close();

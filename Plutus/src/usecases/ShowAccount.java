@@ -6,10 +6,12 @@ import main.ManagmentSystem;
 import model.Account;
 import model.Customer;
 import model.Employee;
+import model.Person;
 import model.Transaction;
 import transaction.AccountBoundary;
 
 public class ShowAccount {
+	public final String BANK_ID = "afeka08";
 	public void showAccount(Account account) {
 		try {
 			System.out.println("Total balance- " + account.getBalance());
@@ -29,7 +31,7 @@ public class ShowAccount {
 	public void showTransaction(Transaction trans,Account account) {
 		if(trans.getAmount()<0) {
 			System.out.println("Transaction source:");
-			System.out.println("BankId- " + "afeka08");
+			System.out.println("BankId- " + BANK_ID);
 			System.out.println("Account-"+ account.getAccountNumber());
 			
 			System.out.println("Transaction destination:");
@@ -40,7 +42,7 @@ public class ShowAccount {
 			showAccontBoundary(trans.getOtherPerson());
 			
 			System.out.println("Transaction destination:");
-			System.out.println("BankId- " + "afeka08");
+			System.out.println("BankId- " + BANK_ID);
 			System.out.println("Account-"+ account.getAccountNumber());
 			
 		}
@@ -78,7 +80,7 @@ public class ShowAccount {
 		return null;
 	}
 
-	public void show(Object o) {//primaryMethod
+	public void show(Person o) {//primaryMethod
 		try {
 			Scanner s = new Scanner(System.in);
 			if (o instanceof Employee) {

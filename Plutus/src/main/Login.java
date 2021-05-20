@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import menus.CustomerMenu;
 import menus.EmployeeMenu;
+import model.Account;
 import model.Customer;
 import model.Customer.Gender;
 import model.Employee.Type;
@@ -21,8 +22,12 @@ public class Login {
 	static 	int exit=0;
 	static Customer customerLogin= null;
 	static Employee EmployeeLogin= null;
-	public static Boolean start(int select)//  Infinity=true => back to main menu
-	{
+	public static Boolean start(int select, String[] args)//  Infinity=true => back to main menu
+	{	//	ManagmentSystem.getManager().getAllCustomer().add(new Customer("Or", "Choen", "OrChoen", "12345", Gender.Male, "01/01/1995", "058544555"));
+	
+		//	ManagmentSystem.getManager().getAllCustomer().get(0).addAllAccount(new Account(100));
+
+		
 		try {
 			switch(select)
 			{
@@ -45,10 +50,10 @@ public class Login {
 				
 				customerLogin=ManagmentSystem.getManager().findCustomer(userName,password);
 				System.out.println(customerLogin.getFirstName());
-					}while (customerLogin!= null );  // try 3 times or 
+					}while (customerLogin== null );  // try 3 times or 
 				
 				if(customerLogin!= null)
-	     	   CustomerMenu.run( customerLogin);
+	     	   CustomerMenu.run( customerLogin, args);
 				else
 					System.err.println("Cant Login back to main menu");
 				return true;
@@ -58,7 +63,7 @@ public class Login {
 				CreateNewCustomer createNewCustomer = null;
 				
 				ManagmentSystem.getManager().addAllEmployees(   new Employee( "firstName",  "surName",  "userName",  "password", Type.Manager));
-				 createNewCustomer=new CreateNewCustomer("Ido", "Levi", "IdoLevi", "96856", Gender.Male, "01/01/1995", "058544555");
+				 createNewCustomer=new CreateNewCustomer("Ido", "Levi", "IdoLevi", "1", Gender.Male, "01/01/1995", "058544555");
 				if( createNewCustomer.registerCustomer())
 				System.out.println("ok"); //fix
 				return true;
