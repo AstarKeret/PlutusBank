@@ -2,10 +2,16 @@ package main;
 
 import java.util.Scanner;  // Import the Scanner class
 
+import model.Employee;
+import model.Employee.Type;
+
 
 public class Main {
-	static ManagmentSystem ManagmentSystem;
+	static ManagmentSystem manager = ManagmentSystem.getManager();
 	public static void main(String[] args)   {
+		manager.addAllEmployees(new Employee( "Bob", "aa", "a", "123",  Type.Manager));
+		manager.addAllEmployees(new Employee( "Bob", "bb", "b", "12",  Type.Banker));
+		manager.addAllEmployees(new Employee( "Bob", "cc", "c", "1",  Type.Banker));
 		boolean Infinity=true;	
 		
 		Scanner data = new Scanner(System.in);  // Create a Scanner object
