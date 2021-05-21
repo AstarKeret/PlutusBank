@@ -16,44 +16,38 @@ public class Login {
 
 	static String userName; 
 	static String password;
-	static Scanner data = new Scanner(System.in);  // Create a Scanner object
-
-
+	static Scanner data = Main.data;  // Create a Scanner object
 	static 	int exit=0;
 	static Customer customerLogin= null;
 	static Employee EmployeeLogin= null;
 	public static Boolean start(int select, String[] args)//  Infinity=true => back to main menu
-	{		ManagmentSystem.getManager().getAllCustomer().add(new Customer("Or", "Choen", "OrChoen", "12345", Gender.Male, "01/01/1995", "058544555"));
-	
-			ManagmentSystem.getManager().getAllCustomer().get(0).addAllAccount(new Account(100));
-
+	{	
 		
 		try {
 			switch(select)
 			{
 			case(1): // Customer login
 			{
+				do
+					{
+					System.out.println("Enter username");
+					try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
+					System.err.print("#  ");
+					userName = data.next();  // Read user input
+					try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
+					System.out.println("Enter password");
+					try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
+					System.err.print("# ");
+					password = data.next();  // Read password input
+					System.out.println("Working");
+					printP ();
 					
-					do
-						{
-				System.out.println("Enter username");
-				try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
-				System.err.print("#  ");
-				userName = data.next();  // Read user input
-				try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
-				System.out.println("Enter password");
-				try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
-				System.err.print("# ");
-				password = data.next();  // Read password input
-				System.out.println("Working");
-				printP ();
-				
-				customerLogin=ManagmentSystem.getManager().findCustomer(userName,password);
-				System.out.println(customerLogin.getFirstName());
+					customerLogin=ManagmentSystem.getManager().findCustomer(userName,password);
+					System.out.println(customerLogin.getFirstName());
 					}while (customerLogin== null );  // try 3 times or 
 				
 				if(customerLogin!= null)
-	     	   CustomerMenu.run( customerLogin, args);
+					CustomerMenu.run(customerLogin, args);
 				else
 					System.err.println("Cant Login back to main menu");
 				return true;

@@ -2,13 +2,14 @@ package menus;
 
 import java.util.Scanner;
 
+import main.Main;
 import model.Employee;
 
 public class EmployeeMenu {
-
+	public static Scanner data = Main.data;
 	public static void run(Employee employeeLogin) {
 		boolean flag=false;	
-		Scanner data = new Scanner(System.in);  // Create a Scanner object
+		//Scanner data = new Scanner(System.in);  // Create a Scanner object
 
 		do {
 		try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
@@ -18,7 +19,7 @@ public class EmployeeMenu {
 		System.out.println("1. Select a castumer\n");// 1
 		System.out.println("2. Select an account\n");// 2
 		System.out.println("3. Manager connection\n");// 3
-		System.out.println("4. Logout\n");// 4
+		System.out.println("4. Beck\n");// 4
 		try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 		System.err.print("#  ");
 			
@@ -51,7 +52,6 @@ public class EmployeeMenu {
 			break;
 		}
 		}while(flag==false);
-		data.close();
 	}
 	}
 

@@ -6,6 +6,7 @@ import java.util.Scanner;
 import main.Login;
 import main.Main;
 import main.ManagmentSystem;
+import menus.AccountMenu;
 import menus.CustomerMenu;
 import model.Account;
 import model.Customer;
@@ -49,8 +50,8 @@ public class TransactionCtrl {
 	}
 	
 	public void sendMoney(AccountBoundary destination, double amount, String commant) {
-		Customer tmp = TempMain.getCustomer();
-		account = TempMain.getAccount();
+		Customer tmp = Login.getCustomerLogin();
+		account = CustomerMenu.getAccountLogin();
 		if(account.getBalance() < amount) {	//check balance
 			System.out.println("Sorry, you do not have enough money in your account to transfer this amount");
 			return;
@@ -58,16 +59,15 @@ public class TransactionCtrl {
 		AccountBoundary source = new AccountBoundary(account.getAccountNumber(), MY_ID, " ", tmp.getFirstName() + " " + tmp.getSurName());
 		sendMoney(new BankingTransactionBoundary(source, destination, commant, amount));
 
+
 	}
 	
 	public Boolean sendMoney(BankingTransactionBoundary trans) {
 		try (TransactionSession ts = new TransactionSession(MY_ID, args)){
-
 			ts.sendMoney(trans);
 			if(!trans.getComment().equals("The requested account was not found")) 
 				account.setBalance(account.getBalance() - trans.getAmount());	//update account
 			
-			System.err.println("type any key to quit");
 		}catch (Exception e) {
 			System.err.println("error" + "\n" + e.getCause());
 		}
