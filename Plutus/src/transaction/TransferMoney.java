@@ -7,7 +7,7 @@ import model.Account;
 import model.Customer;
 
 public class TransferMoney {
-	public static Scanner scanner = new Scanner(System.in);
+	public static Scanner scanner = Main.data;
 	public final static String MY_ID = "afeka08";
 
 	public static void transfer(String[] args) {
@@ -27,7 +27,6 @@ public class TransferMoney {
 		}
 			}
 		System.out.println("Enter a commant:");
-//		scanner.nextLine();
 		String commant = scanner.next().trim();
 		new TransactionCtrl(args).sendMoney(destination, amount, commant);
 	}

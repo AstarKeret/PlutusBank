@@ -26,12 +26,12 @@ public class TransactionSession implements AutoCloseable{
 
 	public void handleMessage (BankingTransactionBoundary trans) {
 		if (trans.getDestination().getBankID().equals(this.myID)) 
-		{
-			System.err.println("myID");
+	//	{
+		//	System.err.println("myID");
 			ctrl.receivingMoney(trans);
-		}
-		else
-			System.err.println("not myID");
+		//}
+		//else
+		//	System.err.println("not myID");
 	}
 
 }

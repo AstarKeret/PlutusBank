@@ -31,13 +31,9 @@ public class TransactionCtrl {
 		if(destination != null){
 			destination.setBalance(destination.getBalance() + trans.getAmount());	//update amount
 			destination.addTransactions(new Transaction(trans.getSource(), trans.getComment(), trans.getDateStamp(), trans.getAmount()));	//add transaction
-			System.err.println("notify\ncommant:\t" + trans.getComment());
-			//notify
 		}
-		else {
+		else 
 			sendMoney(new BankingTransactionBoundary(trans.getDestination(), trans.getSource(), "The requested account was not found", trans.getAmount()));	//notify
-			System.err.println("receivingMoney");
-		}
 		}
 
 	private Account searchAccount(String accountNumber) {
@@ -69,7 +65,7 @@ public class TransactionCtrl {
 				account.setBalance(account.getBalance() - trans.getAmount());	//update account
 			
 		}catch (Exception e) {
-			System.err.println("error" + "\n" + e.getCause());
+			e.printStackTrace();
 		}
 		return false;
 	}
