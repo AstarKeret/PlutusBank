@@ -12,49 +12,52 @@ import transaction.AccountBoundary;
 
 public class ShowAccount {
 	public final String BANK_ID = "afeka08";
+
 	public void showAccount(Account account) {
 		try {
+			System.out.println("Customer name: "+ getcustomerName(account.getAccountNumber()));
 			System.out.println("Total balance- " + account.getBalance());
 			System.out.println("Opened on- " + account.getOpenDate().toString());
-			if(account.getTransactions().size() > 0) 
+			if (account.getTransactions().size() > 0)
 				System.out.println("All account transactions: ");
-			 for (int i = 0; i < account.getTransactions().size(); i++) {
-				 Transaction getTransaction= account.getTransactions().get(i);
-				 showTransaction(getTransaction, account);
-			 }
+			for (int i = 0; i < account.getTransactions().size(); i++) {
+				Transaction getTransaction = account.getTransactions().get(i);
+				showTransaction(getTransaction, account);
+			}
 		} catch (Exception e) {
 			System.err.println("There is no such account");
 		}
 
 	}
-	public void showTransaction(Transaction trans,Account account) {
-		if(trans.getAmount()<0) {
+
+	public void showTransaction(Transaction trans, Account account) {
+		if (trans.getAmount() < 0) {
 			System.out.println("Transaction source:");
 			System.out.println("BankId- " + BANK_ID);
-			System.out.println("Account-"+ account.getAccountNumber());
-			
+			System.out.println("Account-" + account.getAccountNumber());
+
 			System.out.println("Transaction destination:");
 			showAccontBoundary(trans.getOtherPerson());
-		}
-		else  {
+		} else {
 			System.out.println("Transaction source:");
 			showAccontBoundary(trans.getOtherPerson());
-			
+
 			System.out.println("Transaction destination:");
 			System.out.println("BankId- " + BANK_ID);
-			System.out.println("Account-"+ account.getAccountNumber());
-			
+			System.out.println("Account-" + account.getAccountNumber());
+
 		}
-			
+
 		System.out.println("Transaction amount- " + trans.getAmount());
 		System.out.println("Comment-" + trans.getComment());
 		System.out.println("Transation date:" + trans.getTimestamp());
-	
+
 	}
+
 	public void showAccontBoundary(AccountBoundary boundary) {
 		System.out.println("Account number- " + boundary.getAccountNumber());
 		System.out.println("BankID" + boundary.getBankID());
-		
+
 	}
 
 	public Account searchAccount(String accountNum, Object o) {
@@ -73,20 +76,50 @@ public class ShowAccount {
 				if (c.getAllAccounts().get(i).getAccountNumber().equals(accountNum))
 					return c.getAllAccounts().get(i);
 			}
-			
+
 		}
 
 		return null;
 	}
 
-	public void show(Person o) {//primaryMethod
+	private String getcustomerName(String accountNum) {
+		ManagmentSystem manage = ManagmentSystem.getManager();
+		for (int i = 0; i < manage.getAllCustomer().size(); i++) {
+			for (int j = 0; j < manage.getAllCustomer().get(i).getAllAccounts().size(); j++) {
+				if (manage.getAllCustomer().get(i).getAllAccounts().get(j).getAccountNumber().equals(accountNum))
+					return manage.getAllCustomer().get(i).getFirstName() + " " + manage.getAllCustomer().get(i).getSurName();
+
+			}
+
+		}
+		return null;
+	}
+
+	public Account show(Person o) {// primaryMethod returns the account it is showing at the moment
+		Account account = null;
+		ManagmentSystem manage = ManagmentSystem.getManager();
 		try {
 			Scanner s = new Scanner(System.in);
 			if (o instanceof Employee) {
+				int accountCount = 0;
+				System.out.println("This are all the accounts in the bank:");
+				for (int i = 0; i < manage.getAllCustomer().size(); i++) {
+					for (int j = 0; j < manage.getAllCustomer().get(i).getAllAccounts().size(); j++) {
 
-				System.out.println("Please enter account number to display");
+						System.out.println( "Account number: "
+								+ manage.getAllCustomer().get(i).getAllAccounts().get(j).getAccountNumber());
+						accountCount++;
+					}
+
+				}
+				if(accountCount==0)
+					System.out.println("There is no accounts in the bank");
+				else {
+				System.out.println("Please type in the account number to display");
 				String accountNum = s.next();
-				showAccount(searchAccount(accountNum, o));
+				account = searchAccount(accountNum, o);
+				showAccount(account);
+				}
 
 			} else {
 				String choice = "";
@@ -100,22 +133,26 @@ public class ShowAccount {
 					do {
 						System.out.println("please type the number of the account you show");
 						String accountNum = s.next();
-						showAccount(searchAccount(accountNum, o));
+						account = searchAccount(accountNum, o);
+						showAccount(account);
 						System.out.println("Do you want to display another account? y/n");
 						choice = s.next();
 
 					} while (choice.equalsIgnoreCase("y"));
+					return account;
 				} else if (c.getAllAccounts().size() == 1) {
-					showAccount(c.getAllAccounts().get(0));
+					account = c.getAllAccounts().get(0);
+					showAccount(account);
 				} else
-					System.out.println("You have no accounts");
+					System.out.println(" No accounts exists");
 
 			}
+
 		} catch (Exception e) {
 			System.err.println("Object must be Employee or Customer");
 		}
+		return account;
 
 	}
-	
 
 }

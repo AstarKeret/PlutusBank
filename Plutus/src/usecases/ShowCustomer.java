@@ -4,7 +4,10 @@ import main.ManagmentSystem;
 import model.Customer;
 
 public class ShowCustomer {
+	ManagmentSystem manage = ManagmentSystem.getManager();
+
 	public void showCustomerInfo(Customer customer) {
+
 		try {
 			System.out.println("First Name: " + customer.getFirstName());// print name
 			System.out.println("Sur Name: " + customer.getSurName());// Show lastName
@@ -23,7 +26,7 @@ public class ShowCustomer {
 	}
 
 	public Customer searchCustomer(int customerNum) {// method will find the the desired customer according his/hers Id
-		ManagmentSystem manage = ManagmentSystem.getManager();
+
 		int numberOfCustomers = manage.getAllCustomer().size();
 		for (int i = 0; i < numberOfCustomers; i++) {
 			if (manage.getAllCustomer().get(i).getCustomerNumber() == customerNum)
@@ -32,8 +35,14 @@ public class ShowCustomer {
 
 		return null;
 	}
-	
-		
-	
+
+	public void showAllCustomers() {
+
+		System.out.println("These are all the customers in the bank");
+		for (int i = 0; i < manage.getAllCustomer().size(); i++) {
+			System.out.print( manage.getAllCustomer().get(i).getFirstName() + " "	+ manage.getAllCustomer().get(i).getSurName());
+			System.out.println(" Customer number:" + manage.getAllCustomer().get(i).getCustomerNumber());
+		}
+	}
 
 }
