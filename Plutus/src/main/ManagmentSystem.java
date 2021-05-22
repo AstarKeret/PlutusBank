@@ -47,7 +47,7 @@ public class ManagmentSystem {
 	}
 	public Employee findEmployee(String userName,String pass) {
 		Employee employee=null;
-		for(int i = 0; i < allCustomer.size() ; i++)
+		for(int i = 0; i < allEmployees.size() ; i++)
 			if(allEmployees.get(i).getUserName().trim().equals(userName.trim()) && allEmployees.get(i).getPassword().trim().equals(pass.trim()))
 				return allEmployees.get(i);
 		

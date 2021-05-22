@@ -57,11 +57,10 @@ public class Login {
 				CreateNewCustomer createNewCustomer = null;
 				
 				ManagmentSystem.getManager().addAllEmployees(   new Employee( "firstName",  "surName",  "userName",  "password", Type.Manager));
-				 createNewCustomer=new CreateNewCustomer("Ido", "Levi", "IdoLevi", "1", Gender.Male, "01/01/1995", "058544555");
+				 createNewCustomer = new CreateNewCustomer("Ido", "Levi", "IdoLevi", "1", Gender.Male, "01/01/1995", "058544555");
 				if( createNewCustomer.registerCustomer())
-				System.out.println("ok"); //fix
+				System.out.println("OK"); //fix
 				return true;
-
 			}
 			case(3):
 			{			
@@ -75,13 +74,12 @@ public class Login {
 				printP ();
 				exit++;
 				EmployeeLogin=ManagmentSystem.getManager().findEmployee(userName,password);
-				}while (EmployeeLogin!= null && exit<=3);	
+				}while (EmployeeLogin== null && exit<=3);	
 				if (EmployeeLogin!= null)
 					EmployeeMenu.run(EmployeeLogin);
 				System.err.println("Cant Login back to main menu");
 				return true;
-
-			}
+		}
 			}
 		} catch (Exception e) {
 			return true;
@@ -112,6 +110,5 @@ public static Customer getCustomerLogin() {
 public static Employee getEmployeeLogin() {
 	return EmployeeLogin;
 }
-
 
 }
