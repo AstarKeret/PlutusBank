@@ -41,17 +41,18 @@ public class Login {
 					password = data.next();  // Read password input
 					System.out.println("Working");
 					printP ();
-					customerLogin=ManagmentSystem.getManager().findCustomer(userName.trim(),password.trim());
+					customerLogin=ManagmentSystem.getManager().findCustomer(userName,password);
 					System.out.println(customerLogin.getFirstName());
 					}while (customerLogin== null);  // try 3 times or 
 				
 				if(customerLogin!= null)
 					CustomerMenu.run(customerLogin);
 				else
-					System.err.println("Cant Login back to main menu");
+					System.err.println("Beack to home page");
 				return true;
 			
 			case(2): //open Customer
+				String tmpUserName = null, tmpPassword;
 				System.out.println( "The Fourth Circle of Hell - for the Stingy and wasteful\n");
 				System.out.println("Please enter your first Name");
 				String firstName=data.next();
@@ -61,15 +62,15 @@ public class Login {
 				while(true) {
 					if(!user) {
 						System.out.println("\nPlease enter a username");
-						String userName=data.next();
+						tmpUserName=data.next();
 		
-						if(!checkUserName(userName))
+						if(!checkUserName(tmpUserName))
 							continue;
 						user = true;
 					}
 					System.out.println("Please enter a password");
-					String password=data.next();
-					if(checkPassword(password))
+					tmpPassword=data.next();
+					if(checkPassword(tmpPassword))
 						break;
 					
 				}	
@@ -94,12 +95,13 @@ public class Login {
 				String DOB=data.next();
 				System.out.println("Please enter a phone Number");
 				String phoneNumber=data.next();
-				
+
+				System.out.println(userName + "\n" + password);
 				CreateNewCustomer createNewCustomer = null;
-				
-				createNewCustomer=new CreateNewCustomer(firstName, surName, userName, password, gender, DOB, phoneNumber);
-				if(createNewCustomer.registerCustomer())
+				createNewCustomer=new CreateNewCustomer(firstName, surName, tmpUserName, tmpPassword, gender, DOB, phoneNumber);
+				if(createNewCustomer.registerCustomer()) {
 					System.out.println("Welcome "+firstName+" "+surName+ " to Plutus"); 
+				}
 				return true;
 
 		
@@ -117,7 +119,7 @@ public class Login {
 				}while (EmployeeLogin== null && exit2<=3);	
 				if (EmployeeLogin!= null)
 					EmployeeMenu.run(EmployeeLogin);
-				System.err.println("Cant Login back to main menu");
+				System.err.println("Beack to home page");
 				return true;
 		
 			}
