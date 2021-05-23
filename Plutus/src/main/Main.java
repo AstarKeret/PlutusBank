@@ -12,14 +12,16 @@ import model.Employee.Type;
 public class Main {
 	public static ManagmentSystem manager = ManagmentSystem.getManager();
 	public static Scanner data = new Scanner(System.in);	  // Create a Scanner object
+	public static String[] arg;
 	public static void main(String[] args)   {
+		arg = args;
 		manager.addAllEmployees(new Employee( "Bob", "aa", "a", "123",  Type.Manager));
 		manager.addAllEmployees(new Employee( "Bob", "bb", "b", "12",  Type.Banker));
 		manager.addAllEmployees(new Employee( "Bob", "cc", "c", "1",  Type.Banker));
 		ManagmentSystem.getManager().getAllCustomer().add(new Customer("Or", "Choen", "OrChoen", "12345", Gender.Male, "01/01/1995", "058544555"));
 		ManagmentSystem.getManager().getAllCustomer().get(0).addAllAccount(new Account(100));
 
-		boolean Infinity=true;	
+		boolean Infinity = true;	
 		
 
 		do {	
@@ -40,10 +42,10 @@ public class Main {
 				e.printStackTrace();
 				data.next();
 			}
-			if(select != 0 && select < 3)
-				Infinity=Login.start(select, args);
-			}while (Infinity==true);
-//		data.close();
+			if(select != 0 && select <= 3)
+				Infinity=Login.start(select);
+			}while (Infinity);
 	}
+	
 }
 

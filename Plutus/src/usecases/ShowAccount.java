@@ -34,7 +34,7 @@ public class ShowAccount {
 		if (trans.getAmount() < 0) {
 			System.out.println("Transaction source:");
 			System.out.println("BankId- " + BANK_ID);
-			System.out.println("Account-" + account.getAccountNumber());
+			System.out.println("Account- " + account.getAccountNumber());
 
 			System.out.println("Transaction destination:");
 			showAccontBoundary(trans.getOtherPerson());
@@ -56,7 +56,7 @@ public class ShowAccount {
 
 	public void showAccontBoundary(AccountBoundary boundary) {
 		System.out.println("Account number- " + boundary.getAccountNumber());
-		System.out.println("BankID" + boundary.getBankID());
+		System.out.println("BankID- " + boundary.getBankID());
 
 	}
 

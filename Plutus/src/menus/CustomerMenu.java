@@ -12,12 +12,10 @@ import usecases.ShowCustomer;
 public class CustomerMenu {
 	public static Scanner data = Main.data;
 	public static Account accountLogin;
-	public static void run(Customer customer, String[] args)// After Login
+	public static void run(Customer customer)// After Login
 	{
 		boolean flag=false;	
-	//	Scanner data = new Scanner(System.in);  // Create a Scanner object
-
-		do {
+	do {
 			try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 				System.err.println("Welcome to Plutus Customer Menu\n");
 				System.out.println("Select one of the displayed options and enter its number after the #\n");
@@ -25,7 +23,7 @@ public class CustomerMenu {
 				System.out.println("2. Show my accounts \n");// 2
 				System.out.println("3. Open new account\n");// 3
 				System.out.println("4. Select an account\n");// 4
-				System.out.println("5. Beck\n");// 5
+				System.out.println("5. Logout\n");// 5
 			try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 				System.err.print("#  ");
 				
@@ -56,7 +54,7 @@ public class CustomerMenu {
 							if(accountLogin == null)
 								System.out.println("true");
 							System.out.println(accountLogin.getAccountNumber());
-							AccountMenu.run(accountLogin, args);		
+							AccountMenu.run(accountLogin);		
 						}
 					else
 						System.out.println("You do not have a bank account");	

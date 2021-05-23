@@ -8,12 +8,12 @@ import usecases.ShowAccount;
 
 public class AccountMenu {
 	public static Scanner data = Main.data;
-	static void run(Account accountLogin, String[] args)// After Login
+	static void run(Account accountLogin)// After Login
 	{
 		boolean flag=false;	
 		do {
-		System.err.println("Welcome to Account " + accountLogin.getAccountNumber());
-		System.out.println("Select one of the displayed options and enter its number after the #\n");
+		System.err.println("\nWelcome to Account " + accountLogin.getAccountNumber());
+		System.out.println("\nSelect one of the displayed options and enter its number after the #\n");
 		System.out.println("1. Show my data \n");// 1
 		System.out.println("2. Transaction \n");// 2
 		System.out.println("3. Beck\n");// 3
@@ -27,7 +27,7 @@ public class AccountMenu {
 			new ShowAccount().showAccount(accountLogin);
 			break;
 		case (2):
-			TransferMoney.transfer(args);
+			TransferMoney.transfer();
 			break;
 		case (3):
 			flag=true;

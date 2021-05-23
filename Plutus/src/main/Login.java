@@ -1,5 +1,6 @@
 
 package main;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import menus.CustomerMenu;
@@ -9,6 +10,7 @@ import model.Customer;
 import model.Customer.Gender;
 import model.Employee.Type;
 import model.Employee;
+import model.Person;
 import usecases.CreateNewCustomer;
 
 
@@ -17,17 +19,15 @@ public class Login {
 	static String userName; 
 	static String password;
 	static Scanner data = Main.data;  // Create a Scanner object
-	static 	int exit=0;
 	static Customer customerLogin= null;
 	static Employee EmployeeLogin= null;
-	public static Boolean start(int select, String[] args)//  Infinity=true => back to main menu
+	public static Boolean start(int select)//  Infinity=true => back to main menu
 	{	
 		
 		try {
 			switch(select)
 			{
 			case(1): // Customer login
-			{
 				do
 					{
 					System.out.println("Enter username");
@@ -41,51 +41,124 @@ public class Login {
 					password = data.next();  // Read password input
 					System.out.println("Working");
 					printP ();
-					
-					customerLogin=ManagmentSystem.getManager().findCustomer(userName,password);
+					customerLogin=ManagmentSystem.getManager().findCustomer(userName.trim(),password.trim());
 					System.out.println(customerLogin.getFirstName());
-					}while (customerLogin== null );  // try 3 times or 
+					}while (customerLogin== null);  // try 3 times or 
 				
 				if(customerLogin!= null)
-					CustomerMenu.run(customerLogin, args);
+					CustomerMenu.run(customerLogin);
 				else
 					System.err.println("Cant Login back to main menu");
 				return true;
-			}
+			
 			case(2): //open Customer
-			{
+				System.out.println( "The Fourth Circle of Hell - for the Stingy and wasteful\n");
+				System.out.println("Please enter your first Name");
+				String firstName=data.next();
+				System.out.println("Please enter your sur name");
+				String surName=data.next();
+				boolean user = false;
+				while(true) {
+					if(!user) {
+						System.out.println("\nPlease enter a username");
+						String userName=data.next();
+		
+						if(!checkUserName(userName))
+							continue;
+						user = true;
+					}
+					System.out.println("Please enter a password");
+					String password=data.next();
+					if(checkPassword(password))
+						break;
+					
+				}	
+			
+				char choice;
+				Gender gender;
+				while(true) {
+					System.out.println("Please enter a Gender M/F");
+					choice = data.next().charAt(0);
+					if(choice == 'f' || choice == 'F') {
+						gender = Gender.Female;
+						break;
+					}
+					else if(choice == 'm' || choice == 'M') {
+						gender = Gender.Male;
+						break;
+					}
+					
+				}
+			
+				System.out.println("Please enter a DOB");
+				String DOB=data.next();
+				System.out.println("Please enter a phone Number");
+				String phoneNumber=data.next();
+				
 				CreateNewCustomer createNewCustomer = null;
 				
-				ManagmentSystem.getManager().addAllEmployees(   new Employee( "firstName",  "surName",  "userName",  "password", Type.Manager));
-				 createNewCustomer = new CreateNewCustomer("Ido", "Levi", "IdoLevi", "1", Gender.Male, "01/01/1995", "058544555");
-				if( createNewCustomer.registerCustomer())
-				System.out.println("OK"); //fix
+				createNewCustomer=new CreateNewCustomer(firstName, surName, userName, password, gender, DOB, phoneNumber);
+				if(createNewCustomer.registerCustomer())
+					System.out.println("Welcome "+firstName+" "+surName+ " to Plutus"); 
 				return true;
-			}
+
+		
 			case(3):
-			{			
-						do
-					{
-				System.out.println("Enter username");
-				userName = data.nextLine();  // Read user input
-				System.out.println("Enter password");
-				password = data.nextLine();  // Read password input
-				System.out.println("Working");
-				printP ();
-				exit++;
-				EmployeeLogin=ManagmentSystem.getManager().findEmployee(userName,password);
-				}while (EmployeeLogin== null && exit<=3);	
+			 	int exit2=0;
+				do{
+					System.out.println("Enter username");
+					userName = data.next();  // Read user input
+					System.out.println("Enter password");
+					password = data.next();  // Read password input
+					System.out.println("Working");
+					printP ();
+					exit2++;
+					EmployeeLogin=ManagmentSystem.getManager().findEmployee(userName,password);
+				}while (EmployeeLogin== null && exit2<=3);	
 				if (EmployeeLogin!= null)
 					EmployeeMenu.run(EmployeeLogin);
 				System.err.println("Cant Login back to main menu");
 				return true;
-		}
+		
 			}
 		} catch (Exception e) {
 			return true;
 		} 
 		return true;
 
+	}
+
+	private static boolean checkPassword(String password) {
+		for(int i = 0 ; i  < password.length() ; i++)
+			if(password.charAt(i) >= 'A' &&  password.charAt(i) <= 'Z')
+				return true;
+			
+		System.out.println("Password must include at least one capital letter");
+		return false;
+	}
+
+	private static boolean checkUserName(String userName) {
+		ArrayList<Customer> customers = ManagmentSystem.getManager().getAllCustomer();
+		ArrayList<Employee> employees = ManagmentSystem.getManager().getAllEmployees();
+		String tube = "{,'//\\\\&$@^~-|+=}.";
+		for(int i = 0 ; i  < tube.length() ; i++)
+			if(userName.contains(tube.charAt(i) +"")) {
+				System.out.println("Username can't include one of flowing " + tube);
+				return false;
+			}
+		
+		for(int i = 0 ; i < customers.size() ; i++)
+			if(customers.get(i).getUserName().equals(userName)) {
+				System.out.println("Username " + userName + " already exist");
+				return false;
+			}
+		
+		for(int i = 0 ; i < employees.size() ; i++)
+			if(employees.get(i).getUserName().equals(userName)) {
+				System.out.println("Username " + userName + " already exist");
+				return false;
+			}
+		return true;
 	}
 
 	public static void printP ()

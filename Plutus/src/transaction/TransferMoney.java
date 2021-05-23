@@ -3,16 +3,18 @@ package transaction;
 import java.util.Scanner;
 
 import main.Main;
+import main.ManagmentSystem;
 import model.Account;
 import model.Customer;
+import model.Transaction;
 
 public class TransferMoney {
 	public static Scanner scanner = Main.data;
 	public final static String MY_ID = "afeka08";
 
-	public static void transfer(String[] args) {
+	public static void transfer() {
 		AccountBoundary destination = getDestinationDetails();
-		double amount = -1;
+	double amount = -1;
 		while(true){
 			try {
 			System.out.println("Amount to be transferred:");
@@ -27,8 +29,9 @@ public class TransferMoney {
 		}
 			}
 		System.out.println("Enter a commant:");
-		String commant = scanner.next().trim();
-		new TransactionCtrl(args).sendMoney(destination, amount, commant);
+		String commant = scanner.next();
+		new TransactionCtrl().sendMoney(destination, amount, commant);
+
 	}
 	
 
@@ -36,14 +39,15 @@ public class TransferMoney {
 	private static AccountBoundary getDestinationDetails() {
 		String accountNumber, bankID, branch, name;
 		while(true){
-			System.out.println("\t**Destination Details**\n\nEnter account number");
-			accountNumber = scanner.nextLine().trim();
+			System.out.println("Destination Details:\n\nEnter account number");
+			accountNumber = scanner.next();
 			System.out.println("Enter bank ID");
-			bankID = scanner.nextLine().trim();
+			bankID = scanner.next();
 			System.out.println("Enter branch number");
-			branch = scanner.nextLine().trim();
+			branch = scanner.next();
+			
 			System.out.println("Enter reciver name");
-			name = scanner.nextLine().trim();
+			name = scanner.next();
 			if(accountNumber.isBlank()) {
 				System.out.println("You must enter an account number");
 				continue;

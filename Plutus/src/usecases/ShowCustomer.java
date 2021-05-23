@@ -14,9 +14,9 @@ public class ShowCustomer {
 			System.out.println("ID: " + customer.getCustomerNumber());// Show Id
 			System.out.println("Birthday: " + customer.getDOB());// show birthday
 			System.out.println("Phone number: " + customer.getPhoneNumber());
-			System.out.println("Account/s- ");
+			System.out.println("Account/s: ");
 			for (int i = 0; i < customer.getAllAccounts().size(); i++) {
-				System.out.println("Account number: " + customer.getAllAccounts().get(i).getAccountNumber());
+				System.out.println("Account # " + customer.getAllAccounts().get(i).getAccountNumber());
 			}
 			System.out.println("Total of: " + customer.getAllAccounts().size() + " accounts.");
 		} catch (Exception e) {

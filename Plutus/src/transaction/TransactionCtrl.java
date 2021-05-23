@@ -15,17 +15,8 @@ import model.Transaction;
 
 public class TransactionCtrl {
 	public final static String MY_ID = "afeka08";
-	private String[] args;
 	private Account account;
-	
-	public TransactionCtrl() {
-		
-	}
-	
-	public TransactionCtrl(String[] args) {
-		this.args = args;
-	}
-	
+
 	public void receivingMoney(BankingTransactionBoundary trans) {
 		Account destination = searchAccount(trans.getDestination().getAccountNumber());
 		if(destination != null){
@@ -48,6 +39,7 @@ public class TransactionCtrl {
 	public void sendMoney(AccountBoundary destination, double amount, String commant) {
 		Customer tmp = Login.getCustomerLogin();
 		account = CustomerMenu.getAccountLogin();
+		
 		if(account.getBalance() < amount) {	//check balance
 			System.out.println("Sorry, you do not have enough money in your account to transfer this amount");
 			return;
@@ -55,17 +47,18 @@ public class TransactionCtrl {
 		AccountBoundary source = new AccountBoundary(account.getAccountNumber(), MY_ID, " ", tmp.getFirstName() + " " + tmp.getSurName());
 		sendMoney(new BankingTransactionBoundary(source, destination, commant, amount));
 
-
 	}
 	
 	public Boolean sendMoney(BankingTransactionBoundary trans) {
-		try (TransactionSession ts = new TransactionSession(MY_ID, args)){
+		try (TransactionSession ts = new TransactionSession(MY_ID, Main.arg)){
 			ts.sendMoney(trans);
-			if(!trans.getComment().equals("The requested account was not found")) 
+			if(!trans.getComment().equals("The requested account was not found")) {
 				account.setBalance(account.getBalance() - trans.getAmount());	//update account
-			
+				account.addTransactions(new Transaction(trans.getDestination(), trans.getComment(), trans.getDateStamp(), trans.getAmount() * -1));
+			}
+			System.err.println("Money transfer was successful");
 		}catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Money transfer failed");
 		}
 		return false;
 	}
