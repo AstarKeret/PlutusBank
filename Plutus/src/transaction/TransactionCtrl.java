@@ -1,16 +1,13 @@
 package transaction;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import main.Login;
 import main.Main;
 import main.ManagmentSystem;
-import menus.AccountMenu;
 import menus.CustomerMenu;
 import model.Account;
 import model.Customer;
-import model.TempMain;
 import model.Transaction;
 
 public class TransactionCtrl {

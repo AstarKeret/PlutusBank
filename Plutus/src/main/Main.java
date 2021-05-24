@@ -1,5 +1,6 @@
 package main;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;  // Import the Scanner class
 
 import model.Account;
@@ -25,7 +26,8 @@ public class Main {
 		
 
 		do {	
-			int select = 0;
+			boolean bSelect = false;
+			int select = 0;	// select
 			try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 			System.err.println("Welcome to Plutus\n");
 			System.out.println("Select one of the displayed options and enter its number after the #\n");
@@ -35,12 +37,19 @@ public class Main {
 			
 			try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}	
 			System.err.print("#  ");
-			try {
-				select = data.nextInt();  // select
-		
-			}catch (Exception e) {
-				e.printStackTrace();
-				data.next();
+			while(!bSelect) {
+					try {
+					select = data.nextInt();  
+					if(select < 1 || select > 3)
+						throw new InputMismatchException();
+					bSelect = true;			
+				}catch (Exception e) {
+					if(e instanceof InputMismatchException)
+						System.out.println("You must select one the options displayed(in digit)");
+					else
+						e.printStackTrace();
+					data.next();
+				}
 			}
 			if(select != 0 && select <= 3)
 				Infinity=Login.start(select);

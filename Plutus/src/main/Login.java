@@ -5,12 +5,9 @@ import java.util.Scanner;
 
 import menus.CustomerMenu;
 import menus.EmployeeMenu;
-import model.Account;
 import model.Customer;
 import model.Customer.Gender;
-import model.Employee.Type;
 import model.Employee;
-import model.Person;
 import usecases.CreateNewCustomer;
 
 
@@ -95,8 +92,7 @@ public class Login {
 				String DOB=data.next();
 				System.out.println("Please enter a phone Number");
 				String phoneNumber=data.next();
-
-				System.out.println(userName + "\n" + password);
+				
 				CreateNewCustomer createNewCustomer = null;
 				createNewCustomer=new CreateNewCustomer(firstName, surName, tmpUserName, tmpPassword, gender, DOB, phoneNumber);
 				if(createNewCustomer.registerCustomer()) {

@@ -2,6 +2,7 @@ package usecases;
 
 import java.util.*;
 
+import main.Main;
 import main.ManagmentSystem;
 import model.Account;
 import model.Customer;
@@ -12,7 +13,7 @@ import transaction.AccountBoundary;
 
 public class ShowAccount {
 	public final String BANK_ID = "afeka08";
-
+	public Scanner s = Main.data;
 	public void showAccount(Account account) {
 		try {
 			System.out.println("Customer name: "+ getcustomerName(account.getAccountNumber()));
@@ -99,7 +100,6 @@ public class ShowAccount {
 		Account account = null;
 		ManagmentSystem manage = ManagmentSystem.getManager();
 		try {
-			Scanner s = new Scanner(System.in);
 			if (o instanceof Employee) {
 				int accountCount = 0;
 				System.out.println("This are all the accounts in the bank:");

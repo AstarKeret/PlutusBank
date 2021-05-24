@@ -1,8 +1,8 @@
 package menus;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.Main;
-import main.ManagmentSystem;
 import model.Account;
 import model.Customer;
 import usecases.OpenAccount;
@@ -27,8 +27,19 @@ public class CustomerMenu {
 			try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 				System.err.print("#  ");
 				
-				int select = data.nextInt();  // select
-				
+				int select = 0;// select
+				boolean bSelect = false;
+				while(!bSelect) {
+					try {
+						select = data.nextInt();  
+						if(select < 1 || select > 5)
+							throw new InputMismatchException();
+						bSelect = true;
+					}catch (InputMismatchException e) {
+						System.out.println("You must select one the options displayed(in digit)");
+						 data.next();
+					}
+				}
 				switch(select)
 				{
 				case (1):
@@ -43,17 +54,26 @@ public class CustomerMenu {
 					break;
 				case (4):
 					if(customer.getAllAccounts().size() > 0) {
-						for(int i = 0 ; i < customer.getAllAccounts().size() ; i++)
-							System.out.println((i+1)+".\tAccount #"+customer.getAllAccounts().get(i).getAccountNumber());
 		
-						System.out.println("Please enter your selection\n");// 4
-						select = data.nextInt();
+						bSelect = false;
+						while(!bSelect) {
+							for(int i = 0 ; i < customer.getAllAccounts().size() ; i++)
+								System.out.println((i+1)+".\tAccount #"+customer.getAllAccounts().get(i).getAccountNumber());
+		
+							System.out.println("Please enter your selection\n");// 4
+							try {
+								select = data.nextInt();
+								if(select < 1 || select > customer.getAllAccounts().size())
+									throw new InputMismatchException();
+								bSelect = true;
+							}catch (InputMismatchException e) {
+								System.out.println("You must select one the options displayed(in digit)");
+								 data.next();
+							}
+						}
 						try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 							System.err.print("#  ");
 							accountLogin = customer.getAllAccounts().get(select-1);
-							if(accountLogin == null)
-								System.out.println("true");
-							System.out.println(accountLogin.getAccountNumber());
 							AccountMenu.run(accountLogin);		
 						}
 					else

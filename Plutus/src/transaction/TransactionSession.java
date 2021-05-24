@@ -1,6 +1,5 @@
 package transaction;
 
-import main.Main;
 import p2p.banking.BankingInterchange;
 
 public class TransactionSession implements AutoCloseable{
@@ -17,7 +16,6 @@ public class TransactionSession implements AutoCloseable{
 
 	public void sendMoney(BankingTransactionBoundary trans) {
 		this.interchange.sendBankingTransaction(trans);
-		System.err.println("send money");
 	}
 
 	

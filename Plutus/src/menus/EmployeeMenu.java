@@ -1,5 +1,6 @@
 package menus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.Main;
@@ -23,8 +24,20 @@ public class EmployeeMenu {
 		try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
 		System.err.print("#  ");
 			
-		int select = data.nextInt();  // select
-
+		int select = 0;  // select
+		boolean bSelect = false;
+		while(!bSelect) {
+			try{
+				select = data.nextInt();
+				if(select < 1 || select > 4)
+					throw new InputMismatchException();
+				bSelect = true;
+			}catch (InputMismatchException e) {
+				System.out.println("You must select one the options displayed(in digit)");
+				 data.next();
+			}
+			
+		}
 		switch(select)
 		{
 		case (1):

@@ -3,10 +3,6 @@ package transaction;
 import java.util.Scanner;
 
 import main.Main;
-import main.ManagmentSystem;
-import model.Account;
-import model.Customer;
-import model.Transaction;
 
 public class TransferMoney {
 	public static Scanner scanner = Main.data;
